@@ -579,12 +579,12 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .nav-links {
     display: none;
-    /* Hide for now, would need JS toggle */
+    /* JS toggles this to flex */
   }
 
   .mobile-menu-btn {
@@ -592,18 +592,62 @@ footer {
     color: #fff;
   }
 
+  /* Reduce padding on sections */
+  .services-section,
+  .tech-section,
+  .contact-section,
+  .gallery-section {
+    padding: 3rem 5%;
+  }
+
+  /* Stack Tech Container */
   .tech-container {
     flex-direction: column;
+    gap: 2rem;
   }
 
   .tech-visual {
     width: 100%;
-    height: 300px;
+    height: 250px;
+    order: -1;
+    /* Show image above text on mobile */
+  }
+
+  /* Stack Stats Grid */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat {
+    border-left: none;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-left: 0;
+    padding-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Gallery Mobile */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+
+  .gallery-item.large {
+    grid-column: auto;
+    height: 250px;
+  }
+
+  .gallery-item {
+    height: 250px;
   }
 
   .footer-content {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
 }
 
